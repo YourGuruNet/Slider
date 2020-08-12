@@ -1,25 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
+import Slider from './components/Slider'
 import './App.css';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Slider Test={ [
+      {
+         "id": "carousel__slide1",
+          "href1": "#carousel__slide4",
+          "href2": "#carousel__slide2",
+      },
+      {
+          "id": "carousel__slide2",
+           "href1": "#carousel__slide",
+           "href2": "#carousel__slide3",
+       },
+       {
+          "id": "carousel__slide3",
+           "href1": "#carousel__slide2",
+           "href2": "#carousel__slide4",
+
+       },
+       {
+          "id": "carousel__slide4",
+           "href1": "#carousel__slide3",
+           "href2": "#carousel__slide1",
+       },
+      
+  ]} />
   );
 }
 
