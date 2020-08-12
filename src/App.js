@@ -6,7 +6,7 @@ function App() {
   return (
     <React.Fragment>
         <h1>Carousel slider made in React.js</h1>
-        <p>This carousel is created with HTML and CSS styles using the Map function.</p>
+        <p>This carousel is created with HTML and CSS styles.</p>
       <Slider
         data={[
           {
