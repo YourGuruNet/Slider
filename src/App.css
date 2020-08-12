@@ -48,7 +48,8 @@ body {
   margin: 0 auto;
   padding: 0 1.25rem;
   font-family: 'Lato', sans-serif;
-  background: linear-gradient(to left, rgba(0, 245, 196, 0.726), rgb(26, 58, 219));
+  background: linear-gradient(to left, rgba(17, 238, 223, 0.774), rgba(18, 2, 242, 0.699));
+  cursor: pointer;
 }
 
 * {
@@ -79,21 +80,40 @@ ol, li {
   margin: 0;
   padding: 0;
 }
+h1, p {
+  text-align: center;
+}
+.carousel {
+  position: relative;
+  padding-top: 75%;
+  filter: drop-shadow(0 0 10px #0003);
+  perspective: 100px;
+  
+}
 
-
-
-
+.carousel__viewport {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  overflow-x: scroll;
+  counter-reset: item;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
 
 .carousel__slide {
   position: relative;
   flex: 0 0 100%;
   width: 100%;
-  background-color: rgb(238, 63, 63);
+  background: linear-gradient(to left, rgb(197, 211, 9), rgb(235, 61, 61));
   counter-increment: item;
 }
 
 .carousel__slide:nth-child(even) {
-  background-color: rgb(13, 224, 252);
+  background: linear-gradient(to left, rgb(6, 232, 249), rgb(56, 43, 238));
 }
 
 .carousel__slide:before {
@@ -140,19 +160,23 @@ ol, li {
 }
 
 .carousel__navigation {
-  
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
 }
 
 .carousel__navigation-list,
 .carousel__navigation-item {
-  
+  display: inline-block;
 }
 
 .carousel__navigation-button {
   display: inline-block;
   width: 1.5rem;
   height: 1.5rem;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   background-clip: content-box;
   border: 0.25rem solid transparent;
   border-radius: 50%;
@@ -160,6 +184,8 @@ ol, li {
   transition: transform 0.1s;
 }
 
+.carousel::before,
+.carousel::after,
 .carousel__prev,
 .carousel__next {
   position: absolute;
@@ -188,7 +214,7 @@ ol, li {
   content: '';
   z-index: 1;
   background-color: black;
-  background-size: 2rem 2rem;
+  background-size: 3rem 3rem;
   background-repeat: no-repeat;
   background-position: center center;
   color: #fff;
